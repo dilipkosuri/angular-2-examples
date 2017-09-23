@@ -9,19 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var homepage_component_1 = require('./homepage.component');
-var AppComponent = (function () {
-    function AppComponent() {
+var Homepage = (function () {
+    function Homepage() {
     }
-    AppComponent = __decorate([
+    Homepage = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Below is some text fetched from another component</h1>\n             <homepage-text></homepage-text>",
-            directives: [homepage_component_1.Homepage]
+            selector: 'homepage-text',
+            template: '<h3>This text is coming from a new component</h3>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], Homepage);
+    return Homepage;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.Homepage = Homepage;
+//# sourceMappingURL=homepage.component.js.map
