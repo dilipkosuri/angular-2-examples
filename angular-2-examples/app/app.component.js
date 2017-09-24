@@ -17,6 +17,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "<h1>Below is some text fetched from another component</h1>\n             <homepage-text></homepage-text>",
+            styles: ["h1 {\n     color: orange\n  }"],
             directives: [homepage_component_1.Homepage]
         }), 
         __metadata('design:paramtypes', [])
