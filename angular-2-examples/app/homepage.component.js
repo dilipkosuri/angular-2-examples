@@ -15,7 +15,8 @@ var Homepage = (function () {
     Homepage = __decorate([
         core_1.Component({
             selector: 'homepage-text',
-            template: '<h3>This text is coming from a new component</h3>'
+            template: '<h3>This text is coming from a new component</h3>',
+            styles: ["\n     h3 {\n         color: red\n     }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], Homepage);
