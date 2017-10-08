@@ -7,7 +7,7 @@ import { Homepage } from './homepage.component'
              <homepage-text></homepage-text>`,
   styles: [`h1 {
      color: orange
-  }`]
+  }`],
   directives: [Homepage]
 })
 export class AppComponent { }
