@@ -13,11 +13,12 @@ var Homepage = (function () {
     function Homepage() {
         this.titleMsg = "This text is coming from a new component";
         this.imgLink = "http://lorempixel.com/400/200";
+        this.username = "";
     }
     Homepage = __decorate([
         core_1.Component({
             selector: 'homepage-text',
-            template: "<h3>{{titleMsg}}</h3>\n      <img [src]=\"imgLink\"><br>\n      <br>\n\n\n      <input class=\"inputTextBoxStyle\" type=\"text\" [(ngModel)]=\"fname\">\n      <input class=\"inputTextBoxStyle\" type=\"text\" [(ngModel)]=\"lname\">\n\n      <p>Full Name: {{fname}} {{lname}}!</p>\n\n    ",
+            template: "<h3>{{titleMsg}}</h3>\n      <img [src]=\"imgLink\"><br>\n      <br>\n\n\n      <input class=\"inputTextBoxStyle\" type=\"text\" [(ngModel)]=\"fname\">\n      <input class=\"inputTextBoxStyle\" type=\"text\" [(ngModel)]=\"lname\">\n\n      <p>Full Name: {{fname}} {{lname}}!</p>\n\n      <p>This can also be rewritten as:</p>\n      <input class=\"inputTextBoxStyle\" [value]=\"username\" (input)=\"username = $event.target.value\">\n      <p>Hello {{username}}!</p>\n\n    ",
             styles: ["\n    .default-section {\n      font-size: 28px;\n      font-weight: bold;\n    }  \n    .inputTextBoxStyle {\n      border: thick solid #CCC;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])

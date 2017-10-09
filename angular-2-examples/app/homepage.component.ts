@@ -12,6 +12,10 @@ import { Component } from '@angular/core';
 
       <p>Full Name: {{fname}} {{lname}}!</p>
 
+      <p>This can also be rewritten as:</p>
+      <input class="inputTextBoxStyle" [value]="username" (input)="username = $event.target.value">
+      <p>Hello {{username}}!</p>
+
     `,
   styles: [`
     .default-section {
@@ -29,6 +33,7 @@ export class Homepage {
   public imgLink = "http://lorempixel.com/400/200";
   public fname;
   public lname;
+  public username="";
 
   constructor() {
   }
