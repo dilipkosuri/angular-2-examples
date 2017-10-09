@@ -13,20 +13,12 @@ var Homepage = (function () {
     function Homepage() {
         this.titleMsg = "This text is coming from a new component";
         this.imgLink = "http://lorempixel.com/400/200";
-        this.flag = true;
-        this.showStyle = true;
     }
-    Homepage.prototype.buttonClicked = function () {
-        console.log("Button is clicked");
-    };
-    Homepage.prototype.buttonClickWithPassingAttr = function (value) {
-        console.log("input value passed through event handling is: \n", value);
-    };
     Homepage = __decorate([
         core_1.Component({
             selector: 'homepage-text',
-            template: "<h3>{{titleMsg}}</h3>\n      <img [src]=\"imgLink\"><br>\n      <button class=\"default-section\" (click)=\"buttonClicked()\">Event handling</button>\n      <br>\n      <input class=\"inputTextBoxStyle\" type=\"text\" #inputParam>\n      <button class=\"default-section\" (click)=\"buttonClickWithPassingAttr(inputParam.value)\">Event handling</button>\n    ",
-            styles: [".myClass {\n         font-size: 28px;\n         font-weight: bold;\n         color: pink;\n    }\n    .default-section {\n      font-size: 28px;\n      font-weight: bold;\n    }\n    .inputTextBoxStyle {\n      border: thick solid #CCC;\n    }\n    "]
+            template: "<h3>{{titleMsg}}</h3>\n      <img [src]=\"imgLink\"><br>\n      <br>\n\n\n      <input class=\"inputTextBoxStyle\" type=\"text\" [(ngModel)]=\"fname\">\n      <input class=\"inputTextBoxStyle\" type=\"text\" [(ngModel)]=\"lname\">\n\n      <p>Full Name: {{fname}} {{lname}}!</p>\n\n    ",
+            styles: ["\n    .default-section {\n      font-size: 28px;\n      font-weight: bold;\n    }  \n    .inputTextBoxStyle {\n      border: thick solid #CCC;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], Homepage);
