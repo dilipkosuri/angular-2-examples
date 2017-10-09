@@ -1,44 +1,41 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'homepage-text',
-    template: `<h3>{{titleMsg}}</h3>
+  selector: 'homepage-text',
+  template: `<h3>{{titleMsg}}</h3>
       <img [src]="imgLink"><br>
-      <button class="default-section" (click)="buttonClicked()">Event handling</button>
       <br>
-      <input class="inputTextBoxStyle" type="text" #inputParam>
-      <button class="default-section" (click)="buttonClickWithPassingAttr(inputParam.value)">Event handling</button>
+
+
+      <input class="inputTextBoxStyle" type="text" [(ngModel)]="fname">
+      <input class="inputTextBoxStyle" type="text" [(ngModel)]="lname">
+
+      <p>Full Name: {{fname}} {{lname}}!</p>
+
+      <p>This can also be rewritten as:</p>
+      <input class="inputTextBoxStyle" [value]="username" (input)="username = $event.target.value">
+      <p>Hello {{username}}!</p>
+
     `,
-    styles: [`.myClass {
-         font-size: 28px;
-         font-weight: bold;
-         color: pink;
-    }
+  styles: [`
     .default-section {
       font-size: 28px;
       font-weight: bold;
-    }
+    }  
     .inputTextBoxStyle {
       border: thick solid #CCC;
     }
-    `]  
+    `]
 })
 
-export class Homepage{
-    public  titleMsg = "This text is coming from a new component";
-    public imgLink = "http://lorempixel.com/400/200";
-    public flag = true;
+export class Homepage {
+  public titleMsg = "This text is coming from a new component";
+  public imgLink = "http://lorempixel.com/400/200";
+  public fname;
+  public lname;
+  public username="";
 
-    showStyle: true;
-    
-    constructor() {
-    }
-    
-    buttonClicked() {
-      console.log("Button is clicked");
-    }
+  constructor() {
+  }
 
-    buttonClickWithPassingAttr(value) {
-        console.log("input value passed through event handling is: \n",value)
-    }
 }    
