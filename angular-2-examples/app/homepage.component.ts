@@ -1,41 +1,71 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'homepage-text',
+  selector: "homepage-text",
   template: `<h3>{{titleMsg}}</h3>
       <img [src]="imgLink"><br>
-      <br>
+      <div *ngIf="showState"> This is shown when the showState becomes true</div>
+      <div *ngIf="!showState"> This is shown when the showState becomes false</div>
 
+      <p>The following shows ngSwitch usage</p>
+      <div [ngSwitch]="color">
+         <div *ngSwitchWhen="'red'">This is shown when the color is set to red</div>
+         <div *ngSwitchWhen="'blue'">This is shown when the color is set to blue</div>
+         <div *ngSwitchDefault>This is shown when the color is not set to any value</div>
+      </div>
 
-      <input class="inputTextBoxStyle" type="text" [(ngModel)]="fname">
-      <input class="inputTextBoxStyle" type="text" [(ngModel)]="lname">
+      <p>The following shows the usage of ngFor directive</p>
+      <ul>
+      <li *ngFor="let color of colors">{{color}}</li>
+      </ul>
 
-      <p>Full Name: {{fname}} {{lname}}!</p>
+      <p>The following demonstrates ngClass & ngStyle i.e, inline styling</p>
 
-      <p>This can also be rewritten as:</p>
-      <input class="inputTextBoxStyle" [value]="username" (input)="username = $event.target.value">
-      <p>Hello {{username}}!</p>
+      <p [ngClass]="{classOne:cOne, classTwo: cTwo}">ngClass Paragraph</p>
 
+      <button class="default-section" (click) = "toggle()">Toggle the ngClass paragraph</button>
+     
+      <p [ngStyle]="{'font-size': size, 'font-style': style}">This is inline type of styling</p>
     `,
-  styles: [`
+  styles: [
+    `
     .default-section {
       font-size: 28px;
       font-weight: bold;
-    }  
-    .inputTextBoxStyle {
-      border: thick solid #CCC;
+      border: 1px solid black;
     }
-    `]
-})
 
+    .classOne {
+       color: white;
+    }
+
+    .classTwo {
+      background-color: black;
+    }
+
+    `
+  ]
+})
 export class Homepage {
   public titleMsg = "This text is coming from a new component";
   public imgLink = "http://lorempixel.com/400/200";
-  public fname;
-  public lname;
-  public username="";
 
-  constructor() {
+  public showState = true;
+
+  public color = "red";
+
+  public colors = ["yellow", "orange", "blue", "aqua"];
+
+  constructor() {}
+
+  public cOne = true;
+  public cTwo = true;
+
+  public size = '30px';
+  public style = 'italic';
+
+  toggle() {
+    this.cOne = !this.cOne;
+    this.cTwo = !this.cTwo;
   }
-
-}    
+}
