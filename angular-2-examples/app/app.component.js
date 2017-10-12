@@ -16,9 +16,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Below is some text fetched from another component</h1>\n             <homepage-text></homepage-text>",
-            styles: ["h1 {\n     color: orange\n  }"],
-            directives: [homepage_component_1.Homepage]
+            template: "<h1>Below is some text fetched from another component</h1>\n             <p>This is Parent App Component</p>\n             <label>Input parent app component value</label>\n             <input class=\"input-text\" type=\"text\" #pText (keyup)=\"0\">\n             <p>Value from child app component i.e. homepage component is: </p>\n             {{childData}}\n             <homepage-text (childEvent)=\"childData=$event\" [parentData]=\"pText.value\"></homepage-text>",
+            styles: ["h1 {\n     color: orange\n  }\n  .input-text {\n    border: 1px solid black;\n  }\n  "],
+            directives: [homepage_component_1.Homepage],
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
