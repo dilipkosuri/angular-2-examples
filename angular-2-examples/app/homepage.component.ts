@@ -5,13 +5,9 @@ import { EventEmitter } from "@angular/core";
   selector: "homepage-text",
   template: `<h3>{{titleMsg}}</h3>
       <img [src]="imgLink"><br>
-     <label>Enter child Homepage-text component value: </label>
-     <input class="input-text" type="text" #childText (keyup)="onChange(childText.value)">
-     <p>The value from parent app component is: </p>
-     {{parentData}}
+     
     `,
-    inputs: [`parentData`],
-    outputs: [`childEvent`],
+   
   styles: [
     `
     .default-section {
@@ -38,11 +34,4 @@ import { EventEmitter } from "@angular/core";
 export class Homepage {
   public titleMsg = "This text is coming from a new component";
   public imgLink = "http://lorempixel.com/400/200";
-
-  public parentData: string;
-  public childEvent = new EventEmitter<string>();
-
-  onChange(value) {
-     this.childEvent.emit(value);
-  }
 }
