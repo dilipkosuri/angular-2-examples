@@ -2,7 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello World</h1>
-  <child-component></child-component>`
+  templateUrl: 'app/app.component.html'
 })
-export class AppComponent { }
+export class AppComponent { 
+  onSubmit(value) {
+    console.log("Value:", value);
+  }
+
+  public firstName="Super Saiyan Blue";
+}
